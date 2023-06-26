@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mmt_bg"
+    android:orientation="vertical"
+    tools:context=".StrengthActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="30dp"
+            android:background="#0000"
+            android:src="@drawable/btn_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="30dp"
+            android:background="#0000"
+            android:src="@drawable/main_settings"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_marginStart="180dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="100dp"
+        android:id="@+id/strength_training_whole"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2"
+        android:background="@drawable/mmt_down_bg">
+        <LinearLayout
+            android:id="@+id/mmt_top"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/mmt_btn1"
+                android:layout_marginStart="120dp"
+                android:layout_gravity="center"
+                android:background="#0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mmt_btn1"/>
+            <ImageButton
+                android:id="@+id/mmt_btn2"
+                android:layout_marginStart="120dp"
+                android:layout_gravity="center"
+                android:background="#0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mmt_btn1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mmt_down"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/mmt_btn3"
+                android:layout_marginStart="120dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:background="#0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mmt_btn1"/>
+            <ImageButton
+                android:id="@+id/mmt_btn4"
+                android:layout_marginStart="120dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:background="#0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mmt_btn1"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
