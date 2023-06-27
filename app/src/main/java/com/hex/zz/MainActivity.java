@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View v){
         if (v.getId() == R.id.main_head) {
-            Intent intent = new Intent(MainActivity.this, HeadActivity.class);
+            Intent intent = new Intent(MainActivity.this, SoundLevelActivity.class);
             startActivity(intent);
         }
     }

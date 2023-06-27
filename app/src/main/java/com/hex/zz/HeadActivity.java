@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +52,11 @@ public class HeadActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tvResult;//识别结果
     private Button btnStart;//开始识别
     private String resultType = "json";//结果内容数据格式
+
+    //TODO:很难可以做到同时说话并显示文本，所以这里只能说完一句话后再说下一句话
+    //假如说一秒钟的话，那么说完一秒后，再说下一秒，这样就可以做到同时说话并显示文本
+    //设置一个循环，每隔一秒钟就去获取一次结果，然后把结果显示出来，直到游戏结束
+    //可能是一秒钟，也可能有其他的时间，这个时间可以自己设置
 
 
     @Override
@@ -175,13 +181,13 @@ public class HeadActivity extends AppCompatActivity implements View.OnClickListe
         //mIat.setParameter("view_tips_plain","false");
 
         // 设置语音前端点:静音超时时间，即用户多长时间不说话则当做超时处理
-        mIat.setParameter(SpeechConstant.VAD_BOS, mSharedPreferences.getString("iat_vadbos_preference", "4000"));
+        mIat.setParameter(SpeechConstant.VAD_BOS, mSharedPreferences.getString("iat_vadbos_preference", "10000"));
 
         // 设置语音后端点:后端点静音检测时间，即用户停止说话多长时间内即认为不再输入， 自动停止录音
-        mIat.setParameter(SpeechConstant.VAD_EOS, mSharedPreferences.getString("iat_vadeos_preference", "1000"));
+        mIat.setParameter(SpeechConstant.VAD_EOS, mSharedPreferences.getString("iat_vadeos_preference", "10000"));
 
         // 设置标点符号,设置为"0"返回结果无标点,设置为"1"返回结果有标点
-        mIat.setParameter(SpeechConstant.ASR_PTT, mSharedPreferences.getString("iat_punc_preference", "1"));
+        mIat.setParameter(SpeechConstant.ASR_PTT, mSharedPreferences.getString("iat_punc_preference", "0"));
 
         // 设置音频保存路径，保存音频格式支持pcm、wav，设置路径为sd卡请注意WRITE_EXTERNAL_STORAGE权限
         mIat.setParameter(SpeechConstant.AUDIO_FORMAT, "wav");
@@ -238,6 +244,11 @@ public class HeadActivity extends AppCompatActivity implements View.OnClickListe
         setParam(); // 设置参数
         mIatDialog.setListener(mRecognizerDialogListener);//设置监听
         mIatDialog.show();// 显示对话框
+        mIatDialog.hide();//隐藏对话框
+        //显示声音响度
+
+
+
     }
     @Override
     protected void onDestroy() {
