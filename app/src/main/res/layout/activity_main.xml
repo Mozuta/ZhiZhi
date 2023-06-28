@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_top"
         android:layout_width="match_parent"
@@ -24,6 +25,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
 
         <ImageButton
             android:id="@+id/main_info"
@@ -74,6 +77,16 @@
             android:src="@drawable/main_exercise"/>
 
     </LinearLayout>
+    <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton
+        android:id="@+id/circle_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:clickable="true"
+        android:src="@drawable/main_info" />
 
 
 
