@@ -48,4 +48,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.15.1'
     //悬浮窗
     implementation 'com.github.wangfeng19930909:DragFloatingActionButton:1.0.1'
+    //huawei
+    implementation 'com.huawei.hms:arenginesdk:4.0.0.5'
+    //xpopup
+    implementation 'com.github.li-xiaojun:XPopup:2.9.19'
+
 }

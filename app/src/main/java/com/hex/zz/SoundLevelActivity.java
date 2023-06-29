@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.hex.zz.utils.SoundLevelMeter;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class SoundLevelActivity extends AppCompatActivity {
 
     private MediaRecorder mediaRecorder;
-    private SoundLevelMeter soundLevelMeter;
+
     private TextView soundLevelTextView;
     private Handler handler;
 
@@ -37,7 +37,7 @@ public class SoundLevelActivity extends AppCompatActivity {
 
 
         soundLevelTextView = findViewById(R.id.soundLevelTextView);
-        soundLevelMeter = new SoundLevelMeter();
+
         handler = new Handler();
         initPermission();
 

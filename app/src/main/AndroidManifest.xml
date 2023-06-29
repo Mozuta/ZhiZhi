@@ -19,6 +19,15 @@
         android:theme="@style/Theme.ZZ"
         tools:targetApi="31">
         <activity
+            android:name=".StoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Excercise_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".EndingActivity"
+            android:exported="false" />
+        <activity
             android:name=".Mmt_choose_Activity"
             android:exported="false" />
         <activity
