@@ -27,12 +27,18 @@ public class Mmt_choose_Activity extends AppCompatActivity {
             // 初始化数据列表（itemList）
             itemList = new ArrayList<>();
             // 添加项目到itemList
+            itemList.add(new Item(1, getResources().getDrawable(R.drawable.game_fish)));
+            itemList.add(new Item(2, getResources().getDrawable(R.drawable.game_fish)));
+            itemList.add(new Item(3, getResources().getDrawable(R.drawable.game_fish)));
+            itemList.add(new Item(4, getResources().getDrawable(R.drawable.game_fish)));
 
             recyclerView = findViewById(R.id.mmt_recycler_view);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
             itemAdapter = new ItemAdapter(itemList);
             recyclerView.setAdapter(itemAdapter);
         }
 
-
+    public List<Item> InitItemList() {
+        return itemList;
+    }
 }

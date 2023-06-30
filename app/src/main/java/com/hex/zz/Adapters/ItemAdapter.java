@@ -1,5 +1,6 @@
 package com.hex.zz.Adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         Item item = itemList.get(position);
         holder.imageView.setImageDrawable(item.getImage());
+        int itemId = item.getId();
+
+        // 设置点击监听器
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 在点击时打印出ID
+                Log.d("ItemAdapter", "Clicked item ID: " + itemId);
+            }
+        });
         // 设置其他属性视图的值
     }
 
